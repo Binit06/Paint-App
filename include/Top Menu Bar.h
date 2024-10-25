@@ -27,12 +27,6 @@ public:
 	}
 
 
-	/*
-		Displays the top menu bar
-
-		@param window_width - the width of the window
-		@param window_height - the height of the window
-	*/
 	static void Display(int window_width, int window_height) {
 		for (int i = 0; i < buttons.size(); i++) {
 			// Pass on event to each button
@@ -41,15 +35,6 @@ public:
 	}
 
 
-	/*
-		Handles button pressed events for top menu bar
-
-		@param button - Mouse button pressed
-		@param state - State of mouse event (down or up)
-		@param x - The x coordinate of the mouse when pressed
-		@param y - The y coordinate of the mouse when pressed
-		@return Has the Top Menu Bar handled the event?
-	*/
 	static bool Pressed(int button, int state, int x, int y) {
 		for (int i = buttons.size() - 1; i >= 0; i--) {
 			// Pass on event to each button
@@ -61,13 +46,6 @@ public:
 	}
 
 
-	/*
-		Handles mouse move events for top menu bar
-
-		@param x - The new x coordinate of the mouse
-		@param y - The new y coordinate of the mouse
-		@return Has the top menu bar handled the event?
-	*/
 	static bool Hover(int x, int y) {
 		bool output = false;
 		for (int i = buttons.size() - 1; i >= 0; i--) {

@@ -5,10 +5,6 @@
 
 #pragma once
 
-
-/*
-	Initializes tool when selected
-*/
 void Tool_Move::Start() {
 	isDisplaying = false;
 	isMouseDown = false;
@@ -16,22 +12,11 @@ void Tool_Move::Start() {
 	flickerColor = false;
 }
 
-
-/*
-	Disables tool when another is selected
-*/
 void Tool_Move::End() {
 	isDisplaying = false;
 	isMouseDown = false;
 }
 
-
-/*
-	Displays rect around selected pixels
-
-	@param window_width - the width of the window
-	@param window_height - the height of the window
-*/
 void Tool_Move::Display(int window_width, int window_height) {
 	if ((!Tool_Move::isDisplaying) || isMouseDown) {
 		// display white cover over canvas while user needs to draw rectangle to select pixels
@@ -70,16 +55,6 @@ void Tool_Move::Display(int window_width, int window_height) {
 	}
 }
 
-
-/*
-	Handles mouse press events passed onto the Move tool
-
-	@param button - Mouse button pressed
-	@param state - State of mouse event (down or up)
-	@param x - The x coordinate of the mouse when pressed
-	@param y - The y coordinate of the mouse when pressed
-	@return Has the tool handled the event?
-*/
 bool Tool_Move::Pressed(int button, int state, int x, int y) {
 	if (currentCanvas.checkInside(x, y)) {
 		// get mouse position in canvas coordinates
@@ -104,15 +79,7 @@ bool Tool_Move::Pressed(int button, int state, int x, int y) {
 }
 
 
-/*
-	Should this tool take priority for receiving mouse events
 
-	@param button - Mouse button pressed
-	@param state - State of mouse event (down or up)
-	@param x - The x coordinate of the mouse when pressed
-	@param y - The y coordinate of the mouse when pressed
-	@return Should this tool take priority for receiving mouse events
-*/
 bool Tool_Move::BlockMousePress(int button, int state, int x, int y) {
 	if (isMouseDown) {
 		// take priority with mouse events when tool is selected and mouse is over canvas
@@ -124,15 +91,6 @@ bool Tool_Move::BlockMousePress(int button, int state, int x, int y) {
 	return false;
 }
 
-
-/*
-	Handles special key events (arrow keys) for the tool
-
-	@param key - the key that was pressed
-	@param x - x position of the mouse
-	@param y - y position of the mouse
-	@return Has the tool handled the event?
-*/
 bool Tool_Move::SpecialKey(int key, int x, int y) {
 	if (isDisplaying) {
 		// get rect coordinates

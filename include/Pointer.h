@@ -1,16 +1,8 @@
-/*
-	Pointer.h
-	Displays a small white cross at the mouse position
-*/
-
 #pragma once
 
 int cursorX = 0;
 int cursorY = 0;
 
-/*
-	Draws a white cross on the screen on a (-1, 1) scale
-*/
 void Draw_Cross() {
 	glBegin(GL_LINE_LOOP);
 	static float pointOne[2] = { -1.0f, 0.0f };
@@ -26,9 +18,6 @@ void Draw_Cross() {
 	glEnd();
 }
 
-/*
-	Draws a small white cross on the screen
-*/
 void Display_Pointer() {
 	glMatrixMode(GL_MODELVIEW);
 	glColor3f(1.0f, 1.0f, 1.0f);

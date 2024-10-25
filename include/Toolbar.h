@@ -87,7 +87,7 @@ public:
 
 	// buttons for each tool in the menu
 	static Button penButton;
-	static Button moveButton;
+	// static Button moveButton;
 	static Button fillButton;
 	static Button rectButton;
 	static Button circleButton;
@@ -101,7 +101,7 @@ public:
 	static void ToolButtonPressed(Button button) {
 		ToolEvents::End();
 		if (button.text == "Pen") { selectedButton = 0; }
-		if (button.text == "Move") { selectedButton = 1; }
+		// if (button.text == "Move") { selectedButton = 1; }
 		if (button.text == "Fill") { selectedButton = 2; }
 		if (button.text == "Rect") { selectedButton = 3; }
 		if (button.text == "Circ") { selectedButton = 4; }
@@ -117,10 +117,10 @@ public:
 		selectedButton = 0;
 		// create the buttons for the toolbar
 		penButton = Button::Create(0, 100, 78, 40, (char *)"Pen", ToolButtonPressed, true);
-		moveButton = Button::Create(0, 140, 78, 40, (char *)"Move", ToolButtonPressed, true);
-		fillButton = Button::Create(0, 180, 78, 40, (char *)"Fill", ToolButtonPressed, true);
-		rectButton = Button::Create(0, 220, 78, 40, (char *)"Rect", ToolButtonPressed, true);
-		circleButton = Button::Create(0, 260, 78, 40, (char *)"Circ", ToolButtonPressed, true);
+		// moveButton = Button::Create(0, 140, 78, 40, (char *)"Move", ToolButtonPressed, true);
+		fillButton = Button::Create(0, 140, 78, 40, (char *)"Fill", ToolButtonPressed, true);
+		rectButton = Button::Create(0, 180, 78, 40, (char *)"Rect", ToolButtonPressed, true);
+		circleButton = Button::Create(0, 220, 78, 40, (char *)"Circ", ToolButtonPressed, true);
 	}
 
 
@@ -133,7 +133,7 @@ public:
 	static void Display(int window_width, int window_height) {
 		// draw the buttons
 		penButton.Display(window_width, window_height);
-		moveButton.Display(window_width, window_height);
+		// moveButton.Display(window_width, window_height);
 		fillButton.Display(window_width, window_height);
 		rectButton.Display(window_width, window_height);
 		circleButton.Display(window_width, window_height);
@@ -162,9 +162,9 @@ public:
 		if ((selectedButton != 0) && (penButton.Pressed(button, state, x, y))) {
 			return true;
 		}
-		if ((selectedButton != 1) && (moveButton.Pressed(button, state, x, y))) {
-			return true;
-		}
+		// if ((selectedButton != 1) && (moveButton.Pressed(button, state, x, y))) {
+		// 	return true;
+		// }
 		if ((selectedButton != 2) && (fillButton.Pressed(button, state, x, y))) {
 			return true;
 		}
@@ -190,9 +190,9 @@ public:
 		if (penButton.Hover(x, y)) {
 			output = true;
 		}
-		if (moveButton.Hover(x, y)) {
-			output = true;
-		}
+		// if (moveButton.Hover(x, y)) {
+		// 	output = true;
+		// }
 		if (fillButton.Hover(x, y)) {
 			output = true;
 		}

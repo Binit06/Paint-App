@@ -64,7 +64,7 @@ std::vector<Button> TopMenuBar::buttons;
 #include "Toolbar.h"
 int Toolbar::selectedButton = 0;
 Button Toolbar::penButton;
-Button Toolbar::moveButton;
+// Button Toolbar::moveButton;
 Button Toolbar::fillButton;
 Button Toolbar::rectButton;
 Button Toolbar::circleButton;
